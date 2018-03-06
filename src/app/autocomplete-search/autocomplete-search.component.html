@@ -1,0 +1,17 @@
+
+<div>
+    <h2>Autocomplete Component</h2>
+    <div class="input-group">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="">Search</span>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="listItem" (keyup)="filter()">
+    </div>
+    <div class="col-12" *ngIf="filterList.length > 0">
+            <ul>
+                <li *ngFor="let item of filterList">
+                    <a (click)="selectItem(item)">{{item.title}}</a>
+                </li>
+            </ul>
+    </div>
+</div>
