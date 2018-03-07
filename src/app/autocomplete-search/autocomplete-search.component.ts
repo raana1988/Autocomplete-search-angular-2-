@@ -19,7 +19,7 @@ export class AutocompleteSearchComponent implements OnInit {
     this.list = []
 
    }
-   products = [];
+ 
 
    //Get data from https://jsonplaceholder.typicode.com/posts
 
@@ -31,7 +31,7 @@ export class AutocompleteSearchComponent implements OnInit {
 
    //Filter function
 
-   filter(){
+   filter= function(){
        
     if (this.listItem !== ""){
         this.filterList = this.list.filter(function(el){
@@ -44,7 +44,7 @@ export class AutocompleteSearchComponent implements OnInit {
 
    //select items for complete search
 
-   selectItem(item){
+   selectItem = function(item){
     this.listItem = item.title;
     this.filterList = [];
     }
