@@ -5,11 +5,11 @@
             <div class="input-group-prepend">
             <span class="input-group-text" id="">Search</span>
             </div>
-            <input type="text" class="form-control" [(ngModel)]="listItem" (keyup)="filter()">
+            <input type="text" class="form-control" [(ngModel)]="listItem" (keydown)="keyDown($event)" (keyup)="filter()">
     </div>
     <div class="col-12" *ngIf="filterList.length > 0">
             <ul>
-                <li *ngFor="let item of filterList">
+                <li *ngFor="let item of filterList; let i = index" id="li" [class.active]="i == arrowkeyLocation">
                     <a (click)="selectItem(item)">{{item.title}}</a>
                 </li>
             </ul>

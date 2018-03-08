@@ -14,3 +14,7 @@ ul>li:hover{
 a{
     cursor: pointer;
 }
+
+.active{
+    background-color: gainsboro;
+}

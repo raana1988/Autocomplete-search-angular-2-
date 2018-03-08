@@ -29,6 +29,10 @@ export class AutocompleteSearchComponent implements OnInit {
      )
    }
 
+   style = {
+     color:"red"
+   }
+
    //Filter function
 
    filter= function(){
@@ -48,7 +52,27 @@ export class AutocompleteSearchComponent implements OnInit {
     this.listItem = item.title;
     this.filterList = [];
     }
-  
+
+
+    arrowkeyLocation = 0;
+
+keyDown(event: KeyboardEvent) {
+
+  console.log(event)
+    switch (event.keyCode) {
+        case 38: // this is the ascii of arrow up
+                 this.arrowkeyLocation--;
+                 
+                 break;
+        case 40: // this is the ascii of arrow down
+                 this.arrowkeyLocation++;
+                 
+                 break;
+        // case 13: // this is the ascii of enter
+        //       console.log("hello");
+        //       break;
+    }
+} 
 
   ngOnInit() {
     this.fetchData();
